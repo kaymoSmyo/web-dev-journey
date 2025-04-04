@@ -3,12 +3,22 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
     <title>Blog by only HTML and CSS</title>
 </head>
 
-
 <body>
+    <header>
+        <h1>kaymoSmyo's blog</h1>
+        <nav>
+            <menu>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+            </menu>
+        </nav>
+    </header>
+
+
     <h1 id="fのアクティブパターンマッチ">F#のアクティブパターンマッチ</h1>
     <pre><code>let (|Int|_|) str =
         match System.Int32.TryParse(str: string) with
@@ -27,6 +37,11 @@
         | Int i -&gt; printfn &quot;The value is an int &#39;%i&#39;&quot; i
         | Bool b -&gt; printfn &quot;The value is a bool &#39;%b&#39;&quot; b
         | _ -&gt; printfn &quot;The value &#39;%s&#39; is something else&quot; str</code></pre>
+
+
+    <footer>©Copyright 2025 by kaymoSmyo. All rights reversed.</footer>
+
+
 </body>
 
 </html>
