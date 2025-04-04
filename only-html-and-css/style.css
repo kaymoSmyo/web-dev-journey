@@ -1,0 +1,13 @@
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* ← 高さを揃える */
+}
