@@ -20,33 +20,34 @@
         </nav>
     </header>
 
+    <article>
+        <h1 id="fのアクティブパターンマッチ">F#のアクティブパターンマッチ</h1>
 
-    <h1 id="fのアクティブパターンマッチ">F#のアクティブパターンマッチ</h1>
+        <pre class="language-fsharp"><code class="language-fsharp">
+        let (|Int|_|) str =
+            match System.Int32.TryParse(str: string) with
+            | (true, int) -&gt; Some(int)
+            | _ -&gt; None
 
-    <pre class="language-fsharp"><code class="language-fsharp">
-    let (|Int|_|) str =
-        match System.Int32.TryParse(str: string) with
-        | (true, int) -&gt; Some(int)
-        | _ -&gt; None
-    
-    let (|Bool|No|) str =
-        match System.Boolean.TryParse(str: string) with
-        | (true, bool) -&gt; Bool(bool)
-        | _ -&gt; No
-    </code></pre>
+        let (|Bool|No|) str =
+            match System.Boolean.TryParse(str: string) with
+            | (true, bool) -&gt; Bool(bool)
+            | _ -&gt; No
+        </code></pre>
 
-    <p>Haskellのパターンシノニムに似ている</p>
-    <p><code class="language-fsharp">|Bool|No|</code>がシノニムに相当</p>
+        <p>Haskellのパターンシノニムに似ている</p>
+        <p><code class="language-fsharp">|Bool|No|</code>がシノニムに相当</p>
 
-    <h2 id="使用例">使用例</h2>
+        <h2 id="使用例">使用例</h2>
 
-    <pre class="language-fsharp"><code class="language-fsharp">
-    let testParse str =
-        match str with
-        | Int i -&gt; printfn &quot;The value is an int &#39;%i&#39;&quot; i
-        | Bool b -&gt; printfn &quot;The value is a bool &#39;%b&#39;&quot; b
-        | _ -&gt; printfn &quot;The value &#39;%s&#39; is something else&quot; str
-    </code></pre>
+        <pre class="language-fsharp"><code class="language-fsharp">
+        let testParse str =
+            match str with
+            | Int i -&gt; printfn &quot;The value is an int &#39;%i&#39;&quot; i
+            | Bool b -&gt; printfn &quot;The value is a bool &#39;%b&#39;&quot; b
+            | _ -&gt; printfn &quot;The value &#39;%s&#39; is something else&quot; str
+        </code></pre>
+    </article>
 
     <footer>©Copyright 2025 by kaymoSmyo. All rights reversed.</footer>
 
